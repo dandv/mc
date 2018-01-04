@@ -1209,7 +1209,7 @@ move_file_file (const WPanel * panel, file_op_total_context_t * tctx, file_op_co
     if (panel != NULL)
     {
         /* In case of single file, calculate totals. In case of many files,
-            totals are calcuated already. */
+           totals are calcuated already. */
         return_status =
             panel_operate_init_totals (panel, src_vpath, &src_stats, ctx, TRUE,
                                        FILEGUI_DIALOG_ONE_ITEM);
@@ -1561,7 +1561,7 @@ do_move_dir_dir (const WPanel * panel, file_op_total_context_t * tctx, file_op_c
     if (panel != NULL)
     {
         /* In case of single directory, calculate totals. In case of many directories,
-            totals are calcuated already. */
+           totals are calcuated already. */
         return_status =
             panel_operate_init_totals (panel, src_vpath, &sbuf, ctx, FALSE,
                                        FILEGUI_DIALOG_ONE_ITEM);
