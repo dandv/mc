@@ -27,8 +27,11 @@
 
 #include "tests/mctest.h"
 
+#include "lib/strutil.h"
+#include "lib/vfs/vfs.h"        /* VFS_ENCODING_PREFIX, vfs_init(), vfs_shut() */
+#include "src/vfs/local/local.c"
+
 #include "lib/util.h"           /* mc_realpath() */
-#include "lib/vfs/vfs.h"        /* VFS_ENCODING_PREFIX */
 
 /* --------------------------------------------------------------------------------------------- */
 
@@ -40,12 +43,18 @@ static char resolved_path[PATH_MAX];
 static void
 setup (void)
 {
+    str_init_strings (NULL);
+    vfs_init ();
+    init_localfs ();
+    vfs_setup_work_dir ();
 }
 
 /* @After */
 static void
 teardown (void)
 {
+    vfs_shut ();
+    str_uninit_strings ();
 }
 
 /* --------------------------------------------------------------------------------------------- */
