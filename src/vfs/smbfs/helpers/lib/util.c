@@ -337,7 +337,7 @@ name_mangle (char *In, char *Out, char name_type)
     p[0] = '\0';
 
     /* Add the scope string. */
-    for (i = 0, len = 0; ; i++, len++)
+    for (i = 0, len = 0;; i++, len++)
     {
         switch (global_scope[i])
         {
@@ -2526,6 +2526,7 @@ gidtoname (gid_t gid)
     slprintf (name, sizeof (name) - 1, "%d", (int) gid);
     return (name);
 }
+
 #if 0
 /*******************************************************************
 turn a user name into a uid
@@ -2955,6 +2956,7 @@ dump_data (int level, char *buf1, int len)
         DEBUG (level, ("\n"));
     }
 }
+
 #if 0
 /*****************************************************************************
  * Provide a checksum on a string
