@@ -265,7 +265,6 @@ static int
 fish_command (struct vfs_class *me, struct vfs_s_super *super, int wait_reply, const char *cmd,
               size_t cmd_len)
 {
-    char *str;
     ssize_t status;
     FILE *logfile = MEDATA->logfile;
 
